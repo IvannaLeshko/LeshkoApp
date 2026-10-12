@@ -1,0 +1,333 @@
+/* ---------- кнопки ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-5);
+  font-weight: 650;
+  line-height: 1.2;
+  color: var(--color-on-accent);
+  text-decoration: none;
+  background: var(--color-accent-ink);
+  border: 2px solid var(--color-accent-ink);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+
+  &--ghost {
+    color: var(--color-ink);
+    background: transparent;
+    border-color: var(--color-line);
+
+    &:hover {
+      border-color: var(--color-ink-soft);
+      filter: none;
+    }
+  }
+
+  &--danger {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-bg);
+  }
+
+  &--large {
+    min-height: 3.25rem;
+    padding-inline: var(--space-6);
+    font-size: var(--text-lg);
+  }
+}
+
+.text-link {
+  font-weight: 650;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-ink);
+    text-decoration: underline;
+  }
+}
+
+.theme-toggle,
+.favorite-button {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-ink-soft);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-ink);
+    background: var(--color-sunken);
+  }
+}
+
+.favorite-button {
+  &.is-active {
+    color: var(--color-accent-ink);
+  }
+
+  &--labeled {
+    display: inline-flex;
+    gap: var(--space-2);
+    width: auto;
+    min-height: 2.75rem;
+    padding-inline: var(--space-4);
+    font-weight: 650;
+    color: var(--color-ink);
+    border-color: var(--color-line);
+    border-radius: var(--radius-sm);
+
+    &.is-active {
+      background: var(--color-accent-tint);
+      border-color: var(--color-accent-ink);
+    }
+  }
+}
+
+/* ---------- пошук і поля ---------- */
+
+.search-field {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 40rem;
+
+  &__label {
+    font-size: var(--text-sm);
+    font-weight: 650;
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface);
+    border: 2px solid var(--color-line);
+    border-radius: var(--radius-sm);
+
+    &::placeholder {
+      color: var(--color-ink-soft);
+    }
+
+    &:hover {
+      border-color: var(--color-ink-soft);
+    }
+  }
+
+  &__hint {
+    font-size: var(--text-sm);
+    color: var(--color-ink-soft);
+  }
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+
+  &__label {
+    font-size: var(--text-sm);
+    font-weight: 650;
+  }
+
+  &__hint {
+    font-size: var(--text-xs);
+    color: var(--color-ink-soft);
+  }
+
+  &__select {
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-surface);
+    border: 2px solid var(--color-line);
+    border-radius: var(--radius-sm);
+  }
+}
+
+.chip-group {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+
+  &__legend {
+    margin-bottom: var(--space-2);
+    padding: 0;
+    font-size: var(--text-sm);
+    font-weight: 650;
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+
+  &__input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: var(--color-surface);
+    border: 2px solid var(--color-line);
+    border-radius: var(--radius-pill);
+  }
+
+  &__input:hover + &__label {
+    border-color: var(--color-ink-soft);
+  }
+
+  &__input:checked + &__label {
+    color: var(--color-on-accent);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  &__input:focus-visible + &__label {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------- панель фільтрів: на телефоні згортається ---------- */
+
+.catalog__controls {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.catalog__filters-toggle {
+  justify-self: start;
+
+  @media (min-width: 56rem) {
+    display: none;
+  }
+}
+
+.filter-panel {
+  display: none;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+
+  &.is-open {
+    display: grid;
+  }
+
+  @media (min-width: 56rem) {
+    display: grid;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  > .button {
+    justify-self: start;
+  }
+}
+
+/* ---------- пагінація ---------- */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+
+  &__summary {
+    font-size: var(--text-sm);
+    color: var(--color-ink-soft);
+
+    @media (min-width: 40rem) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: none;
+    align-items: center;
+    gap: var(--space-1);
+
+    @media (min-width: 40rem) {
+      display: flex;
+    }
+  }
+
+  &__page,
+  &__step {
+    display: inline-grid;
+    place-items: center;
+    min-width: 2.75rem;
+    height: 2.75rem;
+    padding-inline: var(--space-2);
+    font-weight: 650;
+    color: var(--color-ink);
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+
+    &:hover {
+      background: var(--color-sunken);
+    }
+  }
+
+  &__step {
+    border-color: var(--color-line);
+
+    &.is-disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+  }
+
+  &__page.is-current {
+    color: var(--color-on-accent);
+    background: var(--color-accent-ink);
+  }
+
+  &__gap {
+    padding-inline: var(--space-1);
+    color: var(--color-ink-soft);
+  }
+}

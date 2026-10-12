@@ -1,0 +1,80 @@
+// Дизайн-токени «Обрію». Усі стилі беруть значення лише звідси.
+// Палітра: світло-м'ятний «папір», глибокий темно-бірюзовий текст, бірюзовий акцент.
+// Окрема шкала температур (--heat-*) фарбує термометри й діапазони: від індиго для морозу до червоного для спеки.
+
+:root {
+  color-scheme: light;
+
+  // Кольори
+  --color-bg: #e4edeb;
+  --color-surface: #f6faf9;
+  --color-sunken: #d2e0dd;
+  --color-line: #b7cbc8;
+  --color-ink: #0e2a29;
+  --color-ink-soft: #43605d;
+  --color-accent: #0f766e;
+  --color-accent-ink: #0b5f58;
+  --color-accent-tint: #c9e8e3;
+  --color-on-accent: #ffffff;
+  --color-link: #0b5a86;
+  --color-focus: #0a63d1;
+  --color-danger: #b42318;
+  --color-danger-tint: #fbe3e0;
+  --color-skeleton: #cddbd8;
+  --color-skeleton-shine: #e3edeb;
+
+  // Шкала температур: відтінок задає компонент, насиченість і яскравість — тема
+  --heat-s: 72%;
+  --heat-l: 44%;
+
+  // Типографіка
+  --font-ui: 'Geologica Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --text-xs: 0.78rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: clamp(1.6rem, 3vw, 2.1rem);
+  --text-hero: clamp(2.3rem, 5.8vw, 4.2rem);
+  --text-degrees: clamp(3.6rem, 12vw, 6.5rem);
+
+  // Відступи
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  // Форма
+  --radius-sm: 0.4rem;
+  --radius-card: 0.9rem;
+  --radius-pill: 999px;
+  --container: 72rem;
+  --shadow-pop: 0 16px 34px -18px rgb(14 42 41 / 50%);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #0a1615;
+  --color-surface: #112321;
+  --color-sunken: #071110;
+  --color-line: #224240;
+  --color-ink: #e3f1ef;
+  --color-ink-soft: #92b3af;
+  --color-accent: #3fd0bd;
+  --color-accent-ink: #5fe0cf;
+  --color-accent-tint: #123a36;
+  --color-on-accent: #031d19;
+  --color-link: #8ccbf2;
+  --color-focus: #6fa8ff;
+  --color-danger: #ff8a80;
+  --color-danger-tint: #3a1a1a;
+  --color-skeleton: #1b3331;
+  --color-skeleton-shine: #274744;
+  --heat-s: 70%;
+  --heat-l: 58%;
+  --shadow-pop: 0 16px 34px -18px rgb(0 0 0 / 75%);
+}
